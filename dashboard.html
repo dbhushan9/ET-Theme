@@ -62,6 +62,8 @@
         body{
             background-color: rgb(30,34,39); color:#fff;
             font-family: 'Inconsolata', monospace;
+            max-width: 100%;
+    overflow-x: hidden;
         }
 
     </style>
@@ -124,24 +126,84 @@
             <dev class="col-md-6">
                     <div class="row m-1" >
                             <div class="mx-auto">
-                                <div class=" btn-group btn-group-toggle m-2 " data-toggle="buttons">
-                                    <label class="btn btn-secondary active">
-                                        <input type="radio" name="options" id="option1" autocomplete="off" checked> <b>All</b>
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                        <input type="radio" name="options" id="option2" autocomplete="off"> <b>Today</b>
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                        <input type="radio" name="options" id="option3" autocomplete="off"> <b>Yesterday</b>
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                        <input type="radio" name="options" id="option3" autocomplete="off"> <b>This Week</b>
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                        <input type="radio" name="options" id="option3" autocomplete="off"> <b>Last Week</b>
-                                    </label>
+                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                    <div class=" btn-group btn-group-toggle m-2 " data-toggle="buttons">
+                                        <label class="btn btn-secondary active">
+                                            <input type="radio" name="options" id="option1" autocomplete="off" checked> <b>All</b>
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option2" autocomplete="off"> <b>Today</b>
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option3" autocomplete="off"> <b>Yesterday</b>
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option3" autocomplete="off"> <b>This Week</b>
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option3" autocomplete="off"> <b>Last Week</b>
+                                        </label>
+                                    </div>
+                                    <div class="btn-group" role="group" aria-label="Third group">
+                                        <buton class=" btn btn-secondary m-2" data-toggle="modal" data-target="#exampleModalCenter"><b>Add Transaction</b></buton>
+                                    </div>
+
+                                    <!-- Add Transaction Modal -->
+                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document" >
+                                        <div class="modal-content" style="background-color: rgb(52, 58, 64);font-weight: bold">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle" style="font-weight: bold">Transaction Details</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true" style="color:white"><b>&times;</b></span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-md-6 form-group ">
+                                                        <label for="inputDate">Date</label>
+                                                        <input type="date" class="form-control" id="inputDate">
+                                                    </div>
+                                                    <div class="col-md-6 form-group">
+                                                        <label for="inputCategory">Category</label>
+                                                        <select id="inputCategory" class="form-control">
+                                                            <option >Choose Category</option>
+                                                            <option value="food">Food</option>
+                                                            <option value="travel">Transport</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6 form-group">
+                                                        <label for="inputWallet">Wallet</label>
+                                                        <select id="inputWallet" class="form-control">
+                                                            <option >Wallet</option>
+                                                            <option value="cash">Cash</option>
+                                                            <option value="bank1">Bank1</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6 form-group ">
+                                                        <label for="inputAmount">Amount</label>
+                                                        <input type="number" class="form-control" id="inputAmount">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="validationDefault05">Description</label>
+                                                    <input type="text" class="form-control" name="description" id="description" placeholder="Description">
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+
                                 </div>
-                                <buton class=" btn btn-secondary m-2"><b>Add Transaction</b></buton>
                             </div>
                         </div>
             </dev>
